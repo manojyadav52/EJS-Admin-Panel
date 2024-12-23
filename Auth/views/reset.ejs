@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container Styles */
+        .reset-container {
+            width: 350px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Heading Styles */
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        /* Label Styles */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #444;
+            font-size: 1rem;
+        }
+
+        /* Input Field Styles */
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border 0.3s ease-in-out;
+        }
+
+        input[type="text"]:focus {
+            border-color: #4CAF50;
+        }
+
+        /* Button Styles */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Success/Error Message */
+        .message {
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #d9534f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reset-container">
+        <h1>Reset Password</h1>
+        <% if (message) { %>
+            <p class="success-message" style="color: red;text-align: center;"><%= message %></p>
+            <% } %>
+        
+
+                <!-- Reset Password Form -->
+                <form action="/api/resetPassword/<%= token %>" method="POST">
+
+                   
+                    <div>
+                        <label for="newPassword">New Password</label>
+
+                        
+                        <input type="text" id="newPassword" name="newPassword" placeholder="Enter your new password"
+                            required>
+                    </div>
+                    <div>
+                        <button type="submit">Reset Password</button>
+                    </div>
+                </form>
+    </div>
+</body>
+
+</html>

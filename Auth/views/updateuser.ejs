@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit User</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 15px;
+      background: #4A69BD;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #3B5998;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Edit User</h1>
+
+    <form action="" method="POST" onsubmit="alert('data has been  updated')">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" value="<%= user.fullName %>" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="<%= user.email %>" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">password</label>
+        <input type="password" id="phone" name="password" value="<%= user.password %>" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" name="phone" value="<%= user.phone %>" required>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <input type="text" id="gender" name="gender" value="<%= user.gender %>" required>
+      </div>
+
+      <button type="submit">Update User</button>
+      <button type="submit"><a href="userdata"></a>cancel</button>
+    </form>
+  </div>
+</body>
+
+</html>

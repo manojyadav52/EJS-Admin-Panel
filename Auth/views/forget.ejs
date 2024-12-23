@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget Password</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 0; padding: 0;">
+
+            <% if (message) { %>
+                <p class="success-message" style="color: green ;"><%= message %></p>
+                <% } %>
+
+    <!-- Page Container -->
+    <form action="/api/forget" method="post">
+        <div
+            style="max-width: 400px; margin: 50px auto; background-color: #fff; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+
+            <!-- Header -->
+            <div style="text-align: center; margin-bottom: 20px;">
+                <h1 style="margin: 0; color: #333;">Forget Password</h1>
+
+               
+                
+            </div>
+
+            <!-- Form Section -->
+            <div style="margin-top: 10px;">
+                <label for="email" style="display: block; margin-bottom: 10px; color: #555; font-weight: bold;">Enter
+                    your
+                    Email:</label>
+                <input type="email" name="email" placeholder="Enter your email" required
+                    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+
+                <!-- Submit Button -->
+                <div style="margin-top: 20px; text-align: center;">
+                    <button type="submit"
+                        style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer; font-size: 16px; border-radius: 4px;">
+                        Submit
+                    </button>
+                    <!-- <p><a href="/resetPassword/:token">reset-Password</a></p> -->
+                </div>
+            </div>
+
+        </div>
+    </form>
+</body>
+
+</html>
